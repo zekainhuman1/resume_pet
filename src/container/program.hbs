@@ -1,0 +1,67 @@
+<main>
+	{{#with program.excursion}}
+	<div>
+		<h1 style="text-align: center">{{name}}</h1>
+		<h2 style="text-align: center">{{location.city}}, {{location.country}} - {{date}}</h2>
+	</div>
+	<hr>
+	<br>
+	<h3>Program:</h3>
+	<br>
+	{{#each program}}
+	<span>
+		<b>{{name}} </b>
+		({{type}}) - {{duration}} hours
+		<br>
+		{{#with details}}
+		{{#if museum}}
+		<span>{{museum.name}} <address>({{museum.location.address}}, {{museum.location.city}},
+				{{museum.location.country}})</address></span><br>
+		{{else}}
+		<span>{{venue.name}} <address>({{venue.location.address}}, {{venue.location.city}}, {{venue.location.country}})
+			</address></span><br>
+		{{/if}}
+		<details>
+			<summary>
+				{{#if exhibits}}
+				Exhibits
+				{{else}}
+				Performers
+				{{/if}}
+			</summary>
+			{{#if museum}}
+			{{#each museum.exhibits}}
+			<span>
+				<cite>{{name}}</cite>
+				<br>
+				{{#if artist}}{{artist}}<br>{{/if}}
+				<article>{{description}}</article>
+				{{#if audio_guide}} <img style="width: 15px; height: 15px;"
+					src="https://cdn-icons-png.flaticon.com/512/3783/3783115.png" alt="audio guide"> {{/if}}
+			</span>
+			<br>
+			<br>
+			{{/each}}
+			{{else}}
+			{{#each performers}}
+			<span>
+				{{name}} - {{type}}<br>
+			</span>
+			{{/each}}
+			{{/if}}
+		</details>
+		<br>
+		<br>
+		{{#with guide}}
+		<span>guide: {{name}} (<img style="width: 15px; height: 15px;"
+				src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/512/star-icon.png" alt="rating">
+			{{rating}})</span><br>
+		<span>language: {{language}}</span><br>
+		{{/with}}
+		{{/with}}
+	</span>
+	<br>
+	<hr>
+	{{/each}}
+	{{/with}}
+</main>
