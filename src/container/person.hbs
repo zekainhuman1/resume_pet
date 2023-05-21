@@ -1,0 +1,116 @@
+<main>
+    {{#with person}}
+    <div>
+        <h1 style="text-align: center">{{name}}</h1>
+    </div>
+    <div dir="rtl">
+        <b>Age: {{age}}, Gender: {{gender}}</b>
+        {{#with address}}
+        <address>
+            {{country}}, {{state}}, {{city}}, st.{{street}}, zip:{{zip}}
+        </address>
+        {{/with}}
+    </div>
+    {{/with}}
+    <hr>
+    <br>
+    <section>
+        <h2 style="text-align: center">Education</h2>
+        {{#each person.education}}
+        <div>
+            <b>{{university}} ({{graduationYear}})</b>
+            <p>Major: {{major}}</p>
+            <p>Degree: {{degree}}</p>
+        </div>
+        {{/each}}
+    </section>
+    <hr>
+    <br>
+    <section>
+        <h2 style="text-align: center">Work experience</h2>
+        {{#each person.workExperience}}
+        <div>
+            <b>{{company}} - {{title}} (from {{startDate}} to {{endDate}})</b>
+        </div>
+        <div>
+            <article>{{responsibilities}}</article>
+        </div>
+        <br>
+        <div>
+            <em>Founded: {{year_founded}}, industry: {{industry}}</em>
+            <br>
+            <br>
+            <br>
+            {{#each employees}}
+            <b>Employees:</b>
+            <span>{{name}} / {{department}} {{position}}</span>
+            <br>
+            <br>
+            {{#each projects}}
+            <b>Projects:</b>
+            <span>{{name}} ({{status}})</span>
+            <br>
+            <span>{{description}}</span>
+            <br>
+            <br>
+            {{#each teams}}
+            <b>Team:</b>
+            <span>{{team_name}}</span>
+            <br>
+            <p>
+                <span>Team leader: {{team_leader.name}} / {{team_leader.title}}</span>
+                <br>
+                <span>Email: </span>
+                <a href="mailto:{{team_leader.email}}" target="_blank">{{team_leader.email}}</a>
+            </p>
+            {{#each team_members}}
+            <p>
+                <span>Team members: {{name}} / {{title}}</span>
+                <br>
+                <span>Email: </span>
+                <a href="mailto:{{email}}" target="_blank">{{email}}</a>
+                <br>
+            <details>
+                <summary>Skills: </summary>
+                {{#each skills}}
+                <ul>
+                    <li>{{this}}</li>
+                </ul>
+                {{/each}}
+            </details>
+            <br>
+            <details>
+                <summary>Projects: </summary>
+                <br>
+                {{#each projects}}
+                <span>{{name}}</span>
+                <br>
+                <span>{{description}}</span>
+                <details>
+                    <summary>Technologies: </summary>
+                    {{#each technologies}}
+                    <ul>
+                        <li>{{this}}</li>
+                    </ul>
+                    {{/each}}
+                </details>
+                <details>
+                    <summary>Members: </summary>
+                    {{#each team_members}}
+                    <ul>
+                        <li>{{name}} / {{title}}</li>
+                    </ul>
+                    {{/each}}
+                </details>
+            </details>
+            {{/each}}
+            </p>
+            {{/each}}
+            {{/each}}
+            {{/each}}
+            {{/each}}
+        </div>
+        {{/each}}
+    </section>
+
+</main>
