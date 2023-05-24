@@ -1,0 +1,190 @@
+<main>
+	<br>
+    <div>
+        <h1 class="text-center"> {{name}} <span class="badge bg-success">{{price}}$</span></h1>
+    </div>
+    <hr>
+	<section>
+    <div>
+        <h3 class="fw-semibold text-center fw-bold">{{description}}</h3>
+        <p class="fw-semibold text-center">{{category}}</p>
+    </div>
+    </section>
+	<section>
+		{{#with features}}
+        <p class="text-center">
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExampleOne"
+                aria-expanded="false" aria-controls="collapseExampleOne">
+                <b>Processor</b>
+            </button>
+            <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExampleTwo"
+                aria-expanded="false" aria-controls="collapseExampleTwo">
+                <b>Memory</b>
+            </button>
+            <button class="btn btn-success" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseExampleThree" aria-expanded="false" aria-controls="collapseExampleThree">
+                <b>Storage</b>
+            </button>
+			<button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExampleFour"
+                aria-expanded="false" aria-controls="collapseExampleFour">
+                <b>Display</b>
+            </button>
+            <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExampleFive"
+                aria-expanded="false" aria-controls="collapseExampleFive">
+                <b>Graphics</b>
+            </button>
+            <button class="btn btn-info" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseExampleSix" aria-expanded="false" aria-controls="collapseExampleSix">
+                <b>Ports</b>
+            </button>
+			<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExampleSeven"
+                aria-expanded="false" aria-controls="collapseExampleSeven">
+                <b>Battery</b>
+            </button>
+            <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExampleEight"
+                aria-expanded="false" aria-controls="collapseExampleEight">
+                <b>Weight</b>
+            </button>
+            <button class="btn btn-success" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseExampleNine" aria-expanded="false" aria-controls="collapseExampleNine">
+                <b>Dimensions</b>
+            </button>
+			<button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExampleTen"
+                aria-expanded="false" aria-controls="collapseExampleTen">
+                <b>Operating system</b>
+            </button>
+            <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExampleEleven"
+                aria-expanded="false" aria-controls="collapseExampleEleven">
+                <b>Accessories</b>
+            </button>
+        </p>
+        <div class="collapse" id="collapseExampleOne">
+            <div class="card card-body">
+                {{#with processor}}
+                <h5 class="fw-semibold text-center">Processor</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Brand: </b>{{brand}}</li>
+                    <li class="list-group-item"><b>Model: </b>{{model}}</li>
+                    <li class="list-group-item"><b>Speed: </b>{{speed}}</li>
+                    <li class="list-group-item"><b>Cores: </b>{{cores}}</li>
+                    <li class="list-group-item"><b>Cache: </b>{{cache}}</li>
+                </ul>
+                {{/with}}
+            </div>
+        </div>
+        <div class="collapse" id="collapseExampleTwo">
+            <div class="card card-body">
+                {{#with memory}}
+                <h5 class="fw-semibold text-center">Memory</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Type: </b>{{type}}</li>
+                    <li class="list-group-item"><b>Size: </b>{{size}}</li>
+                    <li class="list-group-item"><b>Speed: </b>{{speed}}</li>
+                </ul>
+                {{/with}}
+            </div>
+        </div>
+        <div class="collapse" id="collapseExampleThree">
+            <div class="card card-body">
+                {{#with storage}}
+                <h5 class="fw-semibold text-center">Storage</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Type: </b>{{type}}</li>
+                    <li class="list-group-item"><b>Size: </b>{{size}}</li>
+                </ul>
+                {{/with}}
+            </div>
+        </div>
+		<div class="collapse" id="collapseExampleFour">
+            <div class="card card-body">
+                {{#with display}}
+                <h5 class="fw-semibold text-center">Display</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Size: </b>{{size}}</li>
+                    <li class="list-group-item"><b>Resolution: </b>{{resolution}}</li>
+                    <li class="list-group-item"><b>Technology: </b>{{technology}}</li>
+                    <li class="list-group-item"><b>Color space: </b>{{color_space}}</li>
+                    <li class="list-group-item"><b>Brightness: </b>{{brightness}}</li>
+					<li class="list-group-item"><b>Refresh rate: </b>{{refresh_rate}}</li>
+                </ul>
+                {{/with}}
+            </div>
+        </div>
+        <div class="collapse" id="collapseExampleFive">
+            <div class="card card-body">
+                {{#with graphics}}
+                <h5 class="fw-semibold text-center">Graphics</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Brand: </b>{{brand}}</li>
+                    <li class="list-group-item"><b>Model: </b>{{model}}</li>
+                    <li class="list-group-item"><b>Memory: </b>{{memory}}</li>
+                </ul>
+                {{/with}}
+            </div>
+        </div>
+        <div class="collapse" id="collapseExampleSix">
+            <div class="card card-body">
+                <h5 class="fw-semibold text-center">Ports</h5>
+				{{#each ports}}
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Type: </b>{{type}}</li>
+                    <li class="list-group-item"><b>count: </b>{{count}}</li>		
+					{{#if features}}<li class="list-group-item"><b>features: </b>{{features.[0]}} | {{features.[1]}} | {{features.[2]}} | {{features.[3]}}</li>{{/if}}	
+                </ul>
+                {{/each}}
+            </div>
+        </div>
+		<div class="collapse" id="collapseExampleSeven">
+            <div class="card card-body">
+                {{#with battery}}
+                <h5 class="fw-semibold text-center">Battery</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Type: </b>{{type}}</li>
+                    <li class="list-group-item"><b>Capacity: </b>{{capacity}}</li>
+                    <li class="list-group-item"><b>Life: </b>{{life}}</li>
+                </ul>
+                {{/with}}
+            </div>
+        </div>
+        <div class="collapse" id="collapseExampleEight">
+            <div class="card card-body">
+                <h5 class="fw-semibold text-center">Weight</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Weight: </b>{{weight}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse" id="collapseExampleNine">
+            <div class="card card-body">
+                {{#with dimensions}}
+                <h5 class="fw-semibold text-center">Dimensions</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Height: </b>{{height}}</li>
+                    <li class="list-group-item"><b>Width: </b>{{width}}</li>
+					<li class="list-group-item"><b>Depth: </b>{{depth}}</li>
+                </ul>
+                {{/with}}
+            </div>
+        </div>
+		<div class="collapse" id="collapseExampleTen">
+            <div class="card card-body">
+                <h5 class="fw-semibold text-center">Operating system</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Operating system: </b>{{operating_system}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse" id="collapseExampleEleven">
+            <div class="card card-body">
+                {{#each accessories}}
+                <h5 class="fw-semibold text-center">Accessories</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Name: </b>{{name}}</li>
+                    <li class="list-group-item"><b>Price: </b>{{price}}</li>
+                </ul>
+                {{/each}}
+            </div>
+        </div>
+    {{/with}}
+	</section>
+</main>
