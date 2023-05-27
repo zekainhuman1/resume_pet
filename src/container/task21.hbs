@@ -1,0 +1,81 @@
+<main>
+  <br>
+  {{#with heading}}
+  {{#with main}}
+  <div class="card w-75">
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      <p class="card-text">{{text}}</p>
+      <a href="#" class="btn btn-primary">{{button_text.solid}}</a>
+      <a href="#" class="btn btn-outline-primary">{{button_text.outline}}</a>
+    </div>
+  </div>
+  <br>
+  {{/with}}
+  {{#with second}}
+  <div class="card w-75">
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      <p class="card-text">{{text}}</p>
+      <a href="#" class="btn btn-secondary">{{button_text.solid}}</a>
+      <a href="#" class="btn btn-outline-secondary">{{button_text.outline}}</a>
+    </div>
+  </div>
+  <br>
+  {{/with}}
+  {{#with subblock}}
+  <div class="card w-75">
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      <p class="card-text">{{text}}</p>
+      <a href="#" class="btn btn-dark">{{button_text.solid}}</a>
+      <a href="#" class="btn btn-outline-dark">{{button_text.outline}}</a>
+    </div>
+  </div>
+  <br>
+  {{/with}}
+  {{/with}}
+  <hr>
+  <br>
+  {{#with nested_display}}
+  <div class="card w-75">
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      {{#with children_display}}
+      <div class="card w-75">
+        <div class="card-body">
+          <h5 class="card-title">{{title}}</h5>
+          <p class="card-text">{{text}}</p>
+          <a href="#" class="btn btn-outline-warning">{{button.text}}</a>
+        </div>
+      </div>
+      {{/with}}
+      <p class="card-text">{{header_text}}</p>
+      <a href="#" class="btn btn-info">{{button.text}}</a>
+    </div>
+  </div>
+  <br>
+  {{/with}}
+  <hr>
+  <br>
+  {{#with paragraph}}
+  <div class="card" style="width: 25rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      <p class="card-text">{{text}}</p>
+      <a href={{button.url}} class="card-link">{{button.text}}</a>
+      <br>
+      <br>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          {{#each list_name}}
+          <a href={{url}} class="card-link">{{text}}</a>
+          <br>
+          <br>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/with}}
+</main>
