@@ -1,0 +1,77 @@
+<main>
+	<section>
+		<h1 class="text-center">{{page_header.title}}</h1>
+		<br>
+		<p class="text-center">{{page_header.description}}</p>
+	</section>
+	<section>
+		{{#with section}}
+		{{#with about_us}}
+		<div class="card w-100 mb-3">
+			<div class="card-body">
+				<p class="card-text text-end display-6">{{title_list.sub}}</p>
+				<h2 class="card-title text-end">{{title_list.main}}</h2>
+				<a href="#" class="btn btn-outline-info">{{button.text}}</a>
+			</div>
+		</div>
+		{{/with}}
+		<br>
+		<br>
+		<br>
+		<div class="card w-100 mb-3">
+			<div class="card-body">
+				{{#with advantage}}
+				<p class="card-text text-start display-5 fw-bolder">{{title}}</p>
+				<br>
+				<div class="card w-100 mb-3">
+					<div class="card-body">
+						<p class="card-text text-start display-4 fw-semibold text-muted">{{efficiency.title}}</p>
+						<h6 class="card-title text-start">{{title_list.sub_title}}</h6>
+						<p class="card-text text-start">{{efficiency.description}}</p>
+						<a href="#" class="btn btn-outline-warning">{{efficiency.button}}</a>
+					</div>
+				</div>
+				<div class="card w-100 mb-3">
+					<div class="card-body">
+						<p class="card-text text-center display-4 fw-medium text-muted">{{innovation.title}}</p>
+						<h6 class="card-title text-center">{{innovation.sub_title}}</h6>
+						<p class="card-text text-center">{{innovation.description}}</p>
+						<a href="#" class="btn btn-outline-warning">{{innovation.button}}</a>
+					</div>
+				</div>
+				<div class="card w-100 mb-3">
+					<div class="card-body">
+						<p class="card-text text-end display-4 fw-medium text-muted">{{collaboration.title}}</p>
+						<h6 class="card-title text-end">{{collaboration.sub_title}}</h6>
+						<p class="card-text text-end">{{collaboration.description}}</p>
+						<a href="#" class="btn btn-outline-warning">{{collaboration.button}}</a>
+					</div>
+				</div>
+				{{/with}}
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<div class="card w-100 mb-3">
+			<div class="card-body">
+				<p class="card-text text-start display-5 fw-bolder">{{agreement.title}}</p>
+				<br>
+				<div class="card w-100 mb-3">
+					<div class="card-body">
+						<h5 class="card-title text-start">{{agreement.info.sub_title}}</h5>
+						<br>
+						<div class="card w-100 mb-3">
+							<div class="card-body">
+								<p class="card-text text-start">{{agreement.info.detail.text}}</p>
+								<br>
+								<a href="#" class="btn btn-success">{{agreement.info.detail.button}}</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{/with}}
+	</section>
+</main>
