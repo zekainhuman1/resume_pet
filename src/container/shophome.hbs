@@ -1,0 +1,119 @@
+<main>
+    <header>
+        <nav>
+            <div class="card py-3 mb-5">
+                {{#with navigation}}
+                <ul class="nav">
+                    {{#each links}}
+                    <li class="nav-item">
+                        <a class="nav-link" href={{href}}>{{text}}</a>
+                    </li>
+                    {{/each}}
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+                {{/with}}
+            </div>
+        </nav>
+    </header>
+    <section class="row g-4">
+        {{#with newsBlock}}
+        <div>
+            <h1 class="text-center">{{title}}</h1>
+        </div>
+        {{#each cards}}
+        <div class="col-3">
+            <div class="card text-bg-secondary">
+                <div class="card-header">
+                    <h6>{{title}}
+                        {{#if isTop}}<span class="badge rounded-pill bg-danger">TOP</span>{{/if}}
+                        {{#if isNew}}<span class="badge rounded-pill bg-success">NEW</span>{{/if}}
+                    </h6>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{description}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{/with}}
+    </section>
+    <hr class="my-5">
+    <section class="row g-4">
+        {{#with goodsBlock}}
+        <div class="mb-5">
+            <ul class="nav nav-tabs">
+                {{#each tabs}}
+                <li class="nav-item">
+                    <a class="nav-link {{#if isActive}}active{{/if}} {{#if isDisabled}}disabled{{/if}}" {{#if
+                        isActive}}aria-current="page" {{/if}} href="#">{{text}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{#each cards}}
+        <div class="col-4">
+            <div class="card">
+                <img src={{image}} class="card-img-top" alt={{title}}>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{title}}
+                        {{#if isHot}}<span class="badge rounded-pill bg-warning">HOT!</span>{{/if}}
+                        {{#if isNew}}<span class="badge rounded-pill bg-primary">NEW</span>{{/if}}
+                    </h5>
+                    <p class="card-text">{{description}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{/with}}
+    </section>
+
+    <hr class="my-5">
+    <section>
+        {{#with subscribe}}
+        <div class="card text-bg-dark">
+            <div class="card-body">
+                <h2 class="card-title">{{header}}</h2>
+                <p class="card-text">{{description}}</p>
+                {{#each buttons}}
+                <div class="flex-column mb-2">
+                    <a href={{link}} class="btn btn-primary">{{text}}</a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        {{/with}}
+    </section>
+    <hr class="my-5">
+    <section>
+        {{#with service}}
+        <div class="card text-bg-success text-center">
+            <div class="card-body">
+                <h2 class="card-title">{{title}}</h2>
+                <p class="card-text">{{description}}</p>
+                {{#each buttons}}
+                <div class="flex-column mb-2">
+                    <a href={{link}} class="btn btn-primary">{{text}}</a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        {{/with}}
+    </section>
+    <hr class="my-5">
+    <footer class="row">
+        {{#each footer}}
+        <div class="col-2">
+            <ul class="nav flex-column">
+                {{#each this}}
+                <li class="nav-item">
+                    <a class="nav-link" href={{link}}>{{text}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/each}}
+    </footer>
+</main>
