@@ -8,10 +8,7 @@
                     {{#each works}}
                     <li>
                         <div>{{position}}</div>
-
-                        <br>
-
-                        <div>
+                        <div class="mb-2">
                             {{duration.to}} - 
                             {{#if duration.to}}
                                 {{duration.to}}
@@ -19,38 +16,27 @@
                                 (по данний час)
                             {{/if}}
                         </div>
-
-                        <br>
-
-                        <div>
+                        <div class="mb-4">
                             {{#if company.url}}
                             {{> lnk text=company.name href=company.url blank=true noLine=true}}
                             {{else}}
                             <b>{{company.name}}</b>
                             {{/if}}
                         </div>
-
-                        <br>
-                        <br>
-
-                        <div>
+                        <div class="mb-2">
                             <strong>Projects: {{projectAmount}}</strong>
                         </div>
-                        <br>
                         <ul>
                             {{#each projects}}
                             <li>
-                                <div>{{> lnk text=name href=url blank=true noLine=true}}</div>
-                                <br>
+                                <div class="my-3">{{> lnk text=name href=url blank=true noLine=true}}</div>
                                 <div>
                                     <p>
                                         {{about}}
                                     </p>
                                 </div>
-                                <br>
                                 <em>Project stacks ({{stackAmount}})</em>
-                                <br>
-                                <div>
+                                <div class="my-3">
                                     <ul>
                                         {{#each stacks}}
                                         <li>
@@ -59,10 +45,8 @@
                                         {{/each}}
                                     </ul>
                                 </div>
-                                <br>
                                 <em>Project awards ({{awardAmount}})</em>
-                                <br>
-                                <div>
+                                <div class="my-3">
                                     <ul>
                                         {{#each awards}}
                                         <li>
@@ -74,9 +58,7 @@
                             </li>
                             {{/each}}
                         </ul>
-
                     </li>
-                    <br>
                     {{/each}}
                 </ul>
             </div>

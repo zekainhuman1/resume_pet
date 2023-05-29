@@ -1,8 +1,5 @@
-// Підключаємо технологію express для back-end сервера
 const express = require('express')
-// Cтворюємо роутер - місце, куди ми підключаємо ендпоїнти
 const router = express.Router()
-
 var header = {
   name: {
     firstname: 'Yevhenii',
@@ -12,7 +9,6 @@ var header = {
   salary: '600$ в місяц',
   address: 'Ukraine, Poltava',
 }
-
 var footer = {
   social: {
     phone: {
@@ -29,34 +25,15 @@ var footer = {
     },
   },
 }
-
-// ================================================================
-
-// router.get Створює нам один ентпоїнт
-
-//           ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/', function (req, res) {
-  // res.render генерує нам HTML сторінку
-
-  //            ↙ cюди вводимо назву файлу з сontainer
   res.render('index', {})
-  //                  ↑↑ сюди вводимо JSON дані
 })
-
-// ================================================================
-
-//              ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/summary', function (req, res) {
-  //             ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
-    // ↙ сюди вводимо JSON дані
     page: {
       title: 'Summary | Resume',
     },
-
     header,
-    // main
-
     main: {
       summary: {
         title: 'Summary',
@@ -71,23 +48,15 @@ router.get('/summary', function (req, res) {
       for such events like: money line - first win / draw / second win, totals etc.`,
       },
     },
-
-    // footer
-
     footer,
   })
 }),
   router.get('/skills', function (req, res) {
-    //             ↙ cюди вводимо назву файлу з сontainer
     res.render('skills', {
-      // ↙ сюди вводимо JSON дані
       page: {
         title: 'Skills | Resume',
       },
-
       header,
-      // main
-
       main: {
         hobbies: [
           {
@@ -103,7 +72,6 @@ router.get('/summary', function (req, res) {
             isMain: false,
           },
         ],
-
         skills: [
           {
             name: 'HTML',
@@ -145,9 +113,6 @@ router.get('/summary', function (req, res) {
           },
         ],
       },
-
-      // footer
-
       footer,
     })
   }),
@@ -202,13 +167,10 @@ router.get('/summary', function (req, res) {
   router.get('/work', function (req, res) {
     res.render('work', {
       layout: 'big',
-
       page: {
         title: 'Work | Resume',
       },
-
       header,
-
       main: {
         works: [
           {
@@ -254,12 +216,10 @@ router.get('/summary', function (req, res) {
           },
         ],
       },
-
       footer,
     })
   }),
   router.get('/person', function (req, res) {
-    //             ↙ cюди вводимо назву файлу з сontainer
     res.render('person', {
       layout: 'basic',
       person: {
@@ -918,7 +878,7 @@ router.get('/summary', function (req, res) {
   }),
   router.get('/facebook', function (req, res) {
     // res.render генерує нам HTML сторінку
-  
+
     //            ↙ cюди вводимо назву файлу з сontainer
     res.render('facebook', {
       layout: 'basic',
@@ -1074,7 +1034,7 @@ router.get('/summary', function (req, res) {
   }),
   router.get('/task21', function (req, res) {
     // res.render генерує нам HTML сторінку
-  
+
     //            ↙ cюди вводимо назву файлу з сontainer
     res.render('task21', {
       layout: 'basic',
@@ -1121,7 +1081,7 @@ router.get('/summary', function (req, res) {
       paragraph: {
         title: 'About modules',
         text: 'Modules with import/export statements',
-  
+
         button: {
           text: 'Open link page',
           url: 'https://google.com',
@@ -1142,7 +1102,7 @@ router.get('/summary', function (req, res) {
   }),
   router.get('/task22', function (req, res) {
     // res.render генерує нам HTML сторінку
-  
+
     //            ↙ cюди вводимо назву файлу з сontainer
     res.render('task22', {
       layout: 'basic',
@@ -1162,7 +1122,8 @@ router.get('/summary', function (req, res) {
           title: 'Advantage',
           efficiency: {
             title: 'Efficiency',
-            sub_title: 'Streamline your software development',
+            sub_title:
+              'Streamline your software development',
             description:
               'Streamline your software development with our innovative platform...',
             button: 'Show more',
@@ -1177,7 +1138,8 @@ router.get('/summary', function (req, res) {
           },
           collaboration: {
             title: 'Collaboration',
-            sub_title: 'Connect with like-minded developers',
+            sub_title:
+              'Connect with like-minded developers',
             description:
               'Connect with a community of like-minded developers to share knowledge and insights...',
             button: 'Show more',
@@ -1199,7 +1161,7 @@ router.get('/summary', function (req, res) {
   }),
   router.get('/task31', function (req, res) {
     // res.render генерує нам HTML сторінку
-  
+
     //            ↙ cюди вводимо назву файлу з сontainer
     res.render('task31', {
       layout: 'basic',
@@ -1450,7 +1412,6 @@ router.get('/summary', function (req, res) {
     })
     //                  ↑↑ сюди вводимо JSON дані
   })
-  
 
 // ================================================================
 

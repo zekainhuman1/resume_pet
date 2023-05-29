@@ -1,12 +1,7 @@
-{{!--
-Це код container файлу для summary сторінки,
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
---}}
-
 <div>
     {{#with main}}
     <main>
-        <section>
+        <section class="py-3">
             {{#with summary}}
             {{> title data=title big=true}}
             <div>
@@ -17,7 +12,7 @@
             {{/with}}
         </section>
 
-        <section>
+        <section class="py-3">
             {{#with experience}}
             {{> title data=title big=false}}
             <div>
