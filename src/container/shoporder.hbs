@@ -1,0 +1,327 @@
+<main>
+	{{> shopheader}}
+	<h1 class="mb-5">{{header}}</h1>
+	<section class="row">
+		<div class="col-8">
+			{{#with contacts_data}}
+			<h3>{{title}}</h3>
+			{{#each buttons}}
+			<button type="button"
+				class="my-2 btn {{#if isPrimary}}btn-primary{{else if isOutline}}btn-outline-warning{{else}}btn-warning{{/if}}">
+				{{text}}</button>
+			{{/each}}
+
+			{{#with form}}
+			{{#with input}}
+			<div class="row">
+				{{#with surname}}
+				<div class="col-6 mb-3">
+					<label for="surName" class="form-label fw-semibold">{{label}}</label>
+					<input type="text" id="surName" class="form-control" placeholder={{placeholder}}
+						aria-describedby="surNameHelp">
+					<div id="surNameHelp" class="form-text fw-medium">
+						{{caption}}
+					</div>
+				</div>
+				{{/with}}
+				{{#with name}}
+				<div class="col-6 mb-3">
+					<label for="name" class="form-label fw-semibold">{{label}}</label>
+					<input type="text" id="name" class="form-control" placeholder={{placeholder}}
+						aria-labelledby="nameHelp">
+					<div id="nameHelp" class="form-text fw-medium">
+						{{caption}}
+					</div>
+				</div>
+				{{/with}}
+				{{#with phone}}
+				<div class="col-6 mb-3">
+					<label for="phone" class="form-label fw-semibold">{{label}}</label>
+					<input type="tel" id="phone" class="form-control" placeholder="{{placeholder}}"
+						aria-labelledby="phoneHelp" pattern="+380[0-9]{2}-[0-9]{3}-[0-9]{4}" required>
+					<div id="phoneHelp" class="form-text fw-medium">
+						{{caption}}
+					</div>
+				</div>
+				{{/with}}
+				{{#with email}}
+				<div class="col-6 mb-3">
+					<label for="email" class="form-label fw-semibold">{{label}}</label>
+					<input type="email" id="email" class="form-control" placeholder={{placeholder}}
+						aria-labelledby="emailHelp" required>
+					<div id="emailHelp" class="form-text fw-medium">
+						{{caption}}
+					</div>
+				</div>
+				{{/with}}
+				{{/with}}
+				<hr class="my-4">
+				{{#each switch}}
+				<div class="form-check form-switch">
+					<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheck" {{#unless
+						isActive}}disabled{{/unless}}>
+					<label class="form-check-label fw-semibold" for="flexSwitchCheck">{{text}}</label>
+				</div>
+				{{/each}}
+				<hr class="my-4">
+			</div>
+			{{/with}}
+			{{/with}}
+			{{#with delivery}}
+			<h3>{{title}}</h3>
+			<div class="card mb-3">
+				<div class="card-body row">
+					{{#each select}}
+					<div class="col-6">
+						<label for="deliverySelect" class="form-label fw-semibold">{{label}}</label>
+						<select id="deliverySelect" class="form-select" aria-label="Default select example">
+							{{#each options}}
+							<option value="" disabled selected hidden>{{../placeholder}}</option>
+							<option value={{value}}>{{text}}</option>
+							{{/each}}
+						</select>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+			{{#each delivery_type}}
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="deliveryType">
+				<label class="form-check-label fw-medium">
+					{{type}}
+				</label>
+			</div>
+			{{/each}}
+			<hr class="my-4">
+			{{#with payment}}
+			<h3>{{title}}</h3>
+			{{#each list}}
+			<div class="form-check my-3">
+				<input class="form-check-input" type="radio" name="deliveryType">
+				<label class="form-check-label fw-semibold">
+					{{type}}
+				</label>
+				{{#if description}}<div class="form-text fw-medium">{{description}}</div>{{/if}}
+			</div>
+			{{/each}}
+			{{/with}}
+			<hr class="my-4">
+			{{#with contact}}
+			<div class="row">
+				<h3>{{title}}</h3>
+				{{#with surname}}
+				<div class="col-6 mb-3">
+					<label for="contactSurName" class="form-label fw-semibold">{{label}}</label>
+					<input type="text" id="contactSurName" class="form-control" placeholder={{placeholder}}
+						aria-describedby="surNameHelp">
+					<div id="contactSurNameHelp" class="form-text fw-medium">
+						{{caption}}
+					</div>
+				</div>
+				{{/with}}
+				{{#with name}}
+				<div class="col-6 mb-3">
+					<label for="contactName" class="form-label fw-semibold">{{label}}</label>
+					<input type="text" id="contactName" class="form-control" placeholder={{placeholder}}
+						aria-labelledby="nameHelp">
+					<div id="contactNameHelp" class="form-text fw-medium">
+						{{caption}}
+					</div>
+				</div>
+				{{/with}}
+				{{#with phone}}
+				<div class="col-6 mb-3">
+					<label for="contactPhone" class="form-label fw-semibold">{{label}}</label>
+					<input type="tel" id="contactPhone" class="form-control" placeholder="{{placeholder}}"
+						aria-labelledby="phoneHelp" pattern="+380[0-9]{2}-[0-9]{3}-[0-9]{4}" required>
+					<div id="contactPhoneHelp" class="form-text fw-medium">
+						{{caption}}
+					</div>
+				</div>
+				{{/with}}
+				{{#with email}}
+				<div class="col-6 mb-3">
+					<label for="contactEmail" class="form-label fw-semibold">{{label}}</label>
+					<input type="email" id="contactEmail" class="form-control" placeholder="{{placeholder}}"
+						aria-labelledby="emailHelp" required>
+					<div id="contactEmailHelp" class="form-text fw-medium">
+						{{caption}}
+					</div>
+				</div>
+				{{/with}}
+				{{/with}}
+			</div>
+			<hr class="my-4">
+			{{#with coment}}
+			<div>
+				<label for="comentTextArea" class="form-label fw-semibold">{{label}}</label>
+				<textarea placeholder="{{placeholder}}" class="form-control" id="comentTextArea" rows="3"></textarea>
+			</div>
+			{{/with}}
+			{{/with}}
+			<hr class="my-4">
+			<div>
+				{{#with coupon}}
+				<h3>{{title}}</h3>
+				<div>
+					{{#with select}}
+					<div>
+						{{#with availabel_coupon}}
+						<label for="availabelCoupon" class="form-label fw-semibold">{{label}}</label>
+						<select id="availabelCoupon" class="form-select form-select-lg mb-3"
+							aria-label=".form-select-lg example">
+							<option value="" disabled selected hidden>{{placeholder}}</option>
+							{{#each options}}
+							<option value={{value}}>{{text}}</option>
+							{{/each}}
+						</select>
+						{{/with}}
+					</div>
+					<div>
+						{{#with friend_coupon}}
+						<label for="friendlCoupon" class="form-label fw-semibold">{{label}}</label>
+						<select id="friendlCoupon" class="form-select is-invalid form-select-sm"
+							aria-label=".form-select-sm example" required>
+							<option value="" disabled selected hidden>{{placeholder}}</option>
+							{{#each options}}
+							<option value={{value}}>{{text}}</option>
+							{{/each}}
+						</select>
+						<div class="invalid-feedback fw-medium mb-3">
+							Please select a valid state.
+						</div>
+						{{/with}}
+					</div>
+					{{/with}}
+				</div>
+				<div>
+					{{#with add}}
+					<div class="mb-3">
+						{{#with friend}}
+						<div>
+							<label for="friendTextArea" class="form-label fw-semibold">{{label}}</label>
+							<textarea placeholder="{{placeholder}}" class="form-control" id="friendTextArea"
+								rows="3"></textarea>
+							<div id="friendCaption" class="form-text fw-medium">{{caption}}</div>
+						</div>
+						{{/with}}
+					</div>
+					<div class="mb-3">
+						{{#with colleague}}
+						<div>
+							<label for="colleagueTextArea" class="form-label fw-semibold">{{label}}</label>
+							<textarea placeholder="{{placeholder}}" class="form-control" id="colleagueTextArea"
+								rows="1"></textarea>
+							<div id="colleagueCaption" class="form-text fw-medium">{{caption}}</div>
+						</div>
+						{{/with}}
+					</div>
+
+					{{/with}}
+				</div>
+				{{/with}}
+			</div>
+			<hr class="my-4">
+			<div>
+				{{#with quiz}}
+				<h3 class="mb-3">{{title}}</h3>
+				<div class="mb-3">
+					{{#with preference}}
+					<p class="fw-semibold mb-1">{{title}}</p>
+					{{#each options}}
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="preferenceRadio" id="preferenceRadio">
+						<label class="form-check-label" for="preferenceRadio">
+							{{this}}
+						</label>
+					</div>
+					{{/each}}
+					{{/with}}
+				</div>
+				<div class="mb-3">
+					{{#with your_expirience}}
+					<div>
+						<label for="expirienceTextArea" class="form-label fw-semibold">{{label}}</label>
+						<textarea class="form-control" id="expirienceTextArea" rows="1"></textarea>
+					</div>
+					{{/with}}
+				</div>
+				<div class="mb-3">
+					{{#with purchase_frequency}}
+					<label for="frequencylCoupon" class="form-label fw-semibold">{{label}}</label>
+					<select id="frequencylCoupon" class="form-select form-select-lg mb-3"
+						aria-label=".form-select-lg example">
+						<option value="" disabled selected hidden>{{placeholder}}</option>
+						{{#each options}}
+						<option value={{value}}>{{text}}</option>
+						{{/each}}
+					</select>
+					{{/with}}
+				</div>
+				<div class="mb-3">
+					{{#with factors}}
+					<p class="fw-semibold mb-1">{{title}}</p>
+					{{#each options}}
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="factorsCheckbox" id="factorsCheckbox">
+						<label class="form-check-label" for="factorsCheckbox">
+							{{this}}
+						</label>
+					</div>
+					{{/each}}
+					{{/with}}
+				</div>
+				{{/with}}
+			</div>
+		</div>
+		<div class="col-4">
+			<div class="card mb-3">
+				<div class="card-body d-grid gap-2">
+					{{#each action_block}}
+					<a href="#"
+						class="btn btn-{{#if isSuccess}}success{{else if isDanger}}danger{{else if isInfo}}info{{/if}}">{{text}}</a>
+					{{/each}}
+				</div>
+			</div>
+			<div class="card">
+				{{#with total}}
+				<div class="card-body pb-0">
+					<h5 class="card-title">{{title}}</h5>
+					<div class="d-flex flex-column">
+						{{#each item_list}}
+						<span class="card-text">{{name}}: {{price}}</span>
+						{{/each}}
+					</div>
+				</div>
+				<hr class="m-2">
+				<div class="card-body py-0">
+					<div class="d-flex flex-column">
+						{{#each additional_info}}
+						<span class="card-text">{{text}}: {{value}}</span>
+						{{/each}}
+					</div>
+				</div>
+				<hr class="m-2">
+				<div class="card-body py-0">
+					<div class="d-flex flex-column">
+						{{#with total_price}}
+						<span class="card-text">{{text}}: {{value}}</span>
+						{{/with}}
+					</div>
+				</div>
+				<hr class="m-2">
+				<div class="card-body py-0">
+					<div class="d-flex flex-column">
+						{{#each button}}
+						<a href="#"
+							class=" m-2 btn btn-{{#if isPrimary}}primary{{else if isOutline}}outline-primary{{/if}}">{{text}}</a>
+						{{/each}}
+					</div>
+				</div>
+				{{/with}}
+			</div>
+		</div>
+	</section>
+	<hr class="my-5">
+	{{>shopfooter}}
+</main>

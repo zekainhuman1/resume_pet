@@ -1,0 +1,18 @@
+<header>
+  <nav>
+    <div class="card py-3 mb-5">
+      {{#with navigation}}
+      <ul class="nav">
+        {{#each links}}
+        <li class="nav-item">
+          <a class="nav-link" href={{href}}>{{text}}</a>
+        </li>
+        {{/each}}
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+      {{/with}}
+    </div>
+  </nav>
+</header>
