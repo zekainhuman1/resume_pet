@@ -1,0 +1,48 @@
+<main>
+    {{> shopheader}}
+    <h1 class="mb-5">{{header}}</h1>
+    <section>
+        {{#with purchase}}
+        <div name="purchaseNav">
+            <ul class="nav nav-tabs">
+                {{#each tabs}}
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">{{this}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <div name="purchaseActionBlock" class="row">
+            {{#with actionBlock}}
+            <div class="col-4 my-2">
+                {{#with input}}
+                <input type="email" class="form-control" id="actionBlockInput" placeholder="{{placeholder}}">
+                {{/with}}
+            </div>
+            <div class="col-8 my-2">
+                <div>
+                    {{#each buttons}}
+                    <a class="btn btn-{{#if isSuccess}}success{{else if isOutline}}outline-success{{else if isDanger}}danger{{/if}}"
+                        href="{{link}}" role="button">{{text}}</a>
+                    {{/each}}
+                </div>
+            </div>
+            {{/with}}
+        </div>
+        <hr class="border-2">
+        <div>
+            {{#each itemList}}
+
+            {{/each}}
+        </div>
+
+
+
+        {{/with}}
+    </section>
+
+
+
+    <hr class="my-5">
+    {{>shopfooter}}
+</main>
