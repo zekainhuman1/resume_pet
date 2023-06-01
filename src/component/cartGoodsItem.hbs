@@ -1,0 +1,26 @@
+<div class="card mb-3">
+    <div class="row card-body p-2 px-4">
+        <div class="col-2 my-auto p-0">
+            <img src="{{image}}" class="img-fluid rounded" alt="{{name}}">
+        </div>
+        <div class="col-4">
+            <h5 class="card-title my-3">{{name}}</h5>
+            <span class="card-text">{{description}}</span>
+        </div>
+        <div class="col-2 my-auto">
+            <span class="card-text">{{price.title}}:</span>
+            <span class="card-text">
+                <h5>{{price.value}}</h5>
+            </span>
+        </div>
+        <div class="col-2 my-auto">
+            <span class="card-text">{{amount}}</span>
+        </div>
+        <div class="vstack gap-2 col-2 my-auto">
+            {{#each buttons}}
+            <button type="#"
+                class="btn btn-{{#if isPrimary}}primary{{else if isDanger}}outline-danger{{/if}}">{{text}}</button>
+            {{/each}}
+        </div>
+    </div>
+</div>

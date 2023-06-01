@@ -1,0 +1,15 @@
+<section>
+    {{#with subscribe}}
+    <div class="card text-bg-dark">
+        <div class="card-body">
+            <h2 class="card-title">{{header}}</h2>
+            <p class="card-text">{{description}}</p>
+            <div class="vstack gap-3 col-md-3">
+                {{#each buttons}}
+                <a href={{link}} class="btn btn-primary">{{text}}</a>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/with}}
+</section>

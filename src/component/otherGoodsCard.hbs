@@ -1,0 +1,13 @@
+<div class="col-4">
+    <div class="card">
+        <img src={{image}} class="card-img-top" alt={{title}}>
+        <div class="card-body">
+            <h5 class="card-title">
+                {{title}}
+                {{#if isHot}}<span class="badge rounded-pill bg-warning">HOT!</span>{{/if}}
+                {{#if isNew}}<span class="badge rounded-pill bg-primary">NEW</span>{{/if}}
+            </h5>
+            <p class="card-text">{{description}}</p>
+        </div>
+    </div>
+</div>

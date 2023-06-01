@@ -36,39 +36,13 @@
             </ul>
         </div>
         {{#each cards}}
-        <div class="col-4">
-            <div class="card">
-                <img src={{image}} class="card-img-top" alt={{title}}>
-                <div class="card-body">
-                    <h5 class="card-title">
-                        {{title}}
-                        {{#if isHot}}<span class="badge rounded-pill bg-warning">HOT!</span>{{/if}}
-                        {{#if isNew}}<span class="badge rounded-pill bg-primary">NEW</span>{{/if}}
-                    </h5>
-                    <p class="card-text">{{description}}</p>
-                </div>
-            </div>
-        </div>
+        {{> otherGoodsCard}}
         {{/each}}
         {{/with}}
     </section>
 
     <hr class="my-5">
-    <section>
-        {{#with subscribe}}
-        <div class="card text-bg-dark">
-            <div class="card-body">
-                <h2 class="card-title">{{header}}</h2>
-                <p class="card-text">{{description}}</p>
-                {{#each buttons}}
-                <div class="flex-column mb-2">
-                    <a href={{link}} class="btn btn-primary">{{text}}</a>
-                </div>
-                {{/each}}
-            </div>
-        </div>
-        {{/with}}
-    </section>
+    {{> subscribeBlock}}
     <hr class="my-5">
     <section>
         {{#with service}}
