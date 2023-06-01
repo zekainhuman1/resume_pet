@@ -1,0 +1,44 @@
+<main>
+	{{> shopheader}}
+	<div name="headerTitle">
+		{{#with header}}
+		<h1>{{title}}</h1>
+		<button type="{{button.link}}" class="btn btn-outline-secondary">{{button.text}}</button>
+		{{/with}}
+	</div>
+	<hr class="my-5">
+	<section name="goodsBlock" class="row">
+		<div class="col-12">
+			{{#each goodsBlock}}
+			{{> cartGoodsItem}}
+			{{/each}}
+		</div>
+	</section>
+	<hr class="my-5">
+	<section name="total">
+		<div>
+			{{#with total}}
+			<h2>{{title}}</h2>
+			<p class="h1">{{amount}}</p>
+			<h6 class="mb-4">{{delivery}}</h6>
+			<div class="vstack gap-3 col-md-3">
+				{{#each buttons}}
+				<button type="{{link}}"
+					class="btn btn-{{#if isSuccess}}success{{else if isOutline}}outline-success{{/if}}">{{text}}</button>
+				{{/each}}
+			</div>
+			{{/with}}
+		</div>
+	</section>
+	<hr class="my-5">
+	<div name="OtherBlock" class="row">
+		<h2 class="text-center mb-3">{{goodsOtherBlock.title}}</h2>
+		{{#each goodsOtherBlock.cards}}
+		{{> otherGoodsCard}}
+		{{/each}}
+	</div>
+	<hr class="my-5">
+	{{>subscribeBlock}}
+	<hr class="my-5">
+	{{> shopfooter}}
+</main>
