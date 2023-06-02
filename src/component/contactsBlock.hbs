@@ -1,0 +1,27 @@
+<div name="contactsDataBlock" class="card p-2 mb-3">
+    {{#with endpoint}}
+    <h3 class="mb-3">{{title}}</h3>
+    <div class="row mx-1">
+        {{#each users}}
+        <div class="card mx-1 col-4">
+            <div class="card-body p-1">
+                <div>
+                    <p class="card-text mb-2">{{#if text}}<b>{{text}}</b>{{else}}{{text}}{{/if}}</p>
+                    <p class="card-text mb-2">{{#if value}}<b>{{value}}</b>{{else}}{{value}}{{/if}}</p>
+                    {{#with button}}
+                    <a class="mb-2 btn btn-{{#if isPrimary}}primary{{else if isSecondary}}secondary{{else if isDanger}}danger{{else}}primary{{/if}}"
+                        href="{{link}}" role="button">{{text}}</a>
+                    {{/with}}
+                </div>
+
+            </div>
+
+        </div>
+        {{/each}}
+    </div>
+
+
+    {{/with}}
+
+
+</div>
