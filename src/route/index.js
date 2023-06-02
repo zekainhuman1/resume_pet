@@ -625,7 +625,6 @@ router.get('/summary', function (req, res) {
     })
   }),
   router.get('/js', function (req, res) {
-    //            ↙ cюди вводимо назву файлу з сontainer
     res.render('js', {
       layout: 'basic',
       name: 'JavaScript',
@@ -877,9 +876,6 @@ router.get('/summary', function (req, res) {
     //                  ↑↑ сюди вводимо JSON дані
   }),
   router.get('/facebook', function (req, res) {
-    // res.render генерує нам HTML сторінку
-
-    //            ↙ cюди вводимо назву файлу з сontainer
     res.render('facebook', {
       layout: 'basic',
       name: 'Facebook',
@@ -1033,9 +1029,6 @@ router.get('/summary', function (req, res) {
     //                  ↑↑ сюди вводимо JSON дані
   }),
   router.get('/task21', function (req, res) {
-    // res.render генерує нам HTML сторінку
-
-    //            ↙ cюди вводимо назву файлу з сontainer
     res.render('task21', {
       layout: 'basic',
       heading: {
