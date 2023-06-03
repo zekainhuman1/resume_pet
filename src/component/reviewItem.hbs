@@ -1,0 +1,57 @@
+<div class="mb-3 card">
+  <div class="card-body">
+    <div name="review">
+      <div name="reviewTitle" class="card rounded-0 rounded-top">
+        <div class="card-body">
+          {{#with title}}
+          <p class="p-0 m-0"><b>{{userName}}</b></p>
+          <span>{{caption}}</span>
+          <p class="my-2">{{date}}</p>
+          {{/with}}
+        </div>
+      </div>
+      {{#with reviewBody}}
+      <div name="reviewBody" class=" mb-4 card rounded-0 rounded-bottom">
+        <div class="card-body">
+          {{#with seller}}
+          <p class="p-0 m-0">{{title}}: {{value}}</p>
+          {{/with}}
+
+          {{#with rating}}
+          <p class="my-3">{{title}}: {{value}}</p>
+          {{/with}}
+
+          {{#each text}}
+          <p class="my-3">{{this}}</p>
+          {{/each}}
+
+          {{#with advantages}}
+          <p class="p-0 m-0"><b>{{title}}</b></p>
+          <p class="mb-3">{{text}}</p>
+          {{/with}}
+
+          {{#with advantages}}
+          <p class="p-0 m-0"><b>{{title}}</b></p>
+          <p class="mb-3">{{text}}</p>
+          {{/with}}
+
+          {{#each images}}
+          <img src="{{this}}" class="rounded" alt="{{this}}">
+          {{/each}}
+        </div>
+      </div>
+      <div name="coments">
+        {{#each coments}}
+        <div class="card ms-5 mb-4">
+          <div class="card-body">
+            <p class="p-0 m-0"><b>{{userName}}</b></p>
+            <p>{{date}}</p>
+            <p class="my-2">{{text}}</p>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      {{/with}}
+    </div>
+  </div>
+</div>
