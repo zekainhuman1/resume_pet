@@ -29,8 +29,8 @@
             <ul class="nav nav-tabs">
                 {{#each tabs}}
                 <li class="nav-item">
-                    <a class="nav-link {{#if isActive}}active{{/if}} {{#if isDisabled}}disabled{{/if}}" {{#if
-                        isActive}}aria-current="page" {{/if}} href="#">{{text}}</a>
+                    <a class="nav-link {{#if isActive}}active{{else if isDisabled}}disabled{{/if}}"
+                        href="#">{{text}}</a>
                 </li>
                 {{/each}}
             </ul>
