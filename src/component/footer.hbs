@@ -1,17 +1,25 @@
-  <footer>
-    <div class="my-3">
-      {{#with social}}
-      {{> lnk text=email.text href=email.href blank=true}}
-      {{> lnk text=phone.text href=phone.href blank=true}}
-      {{> lnk text=telegram.text href=telegram.href blank=true noLine=true}}
-      {{/with}}
-    </div>
-    <div class="my-3">
-      <em>Copiright by {{firstname}} {{lastname}}</em>
-    </div>
-    <div class="my-3">
-      <address>
-        {{address}}
-      </address>
-    </div>
-  </footer>
+<footer>
+  <div class="mt-5">
+    {{#with social}}
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{{email.href}}">{{email.text}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{phone.href}}">{{phone.text}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{telegram.href}}">{{telegram.text}}</a>
+      </li>
+    </ul>
+    {{/with}}
+  </div>
+  <div class="my-3 ms-3">
+    <em>Copiright by {{firstname}} {{lastname}}</em>
+  </div>
+  <div class="my-3 ms-3">
+    <address>
+      {{address}}
+    </address>
+  </div>
+</footer>

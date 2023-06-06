@@ -3217,4 +3217,21 @@ router.get('/summary', function (req, res) {
     })
     //                  ↑↑ сюди вводимо JSON дані
   }),
+  router.get('/index', function (req, res) {
+    res.render('index', {
+      layout: 'index',
+      title: 'Resume proect',
+      firstName: 'Yevhenii',
+      lastName: 'Pokutnii',
+      headList: 'Cписок сторінок',
+      description:
+        'A wallet address is a publicly available address that allows its owner to receive funds from another party. To access the funds in an address, you must have its private key. Learn more about addresses in our Knowledge Base.',
+      pages: [
+        { link: '/summary', text: 'summary' },
+        { link: '/skills', text: 'skills' },
+        { link: '/education', text: 'education' },
+        { link: '/work', text: 'work' },
+      ],
+    })
+  }),
   (module.exports = router)

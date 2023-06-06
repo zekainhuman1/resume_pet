@@ -1,27 +1,31 @@
-<div>
-    {{#with main}}
-    <main>
-        <section class="py-3">
-            {{#with summary}}
-            {{> title data=title big=true}}
-            <div>
-                <p>
-                    {{text}}
-                </p>
-            </div>
-            {{/with}}
-        </section>
+<main>
+    {{> nav summary=1}}
+    <hr>
+    <div>
+        {{#with main}}
+        <main>
+            <section class="py-3">
+                {{#with summary}}
+                {{> title data=title big=true}}
+                <div>
+                    <p>
+                        {{text}}
+                    </p>
+                </div>
+                {{/with}}
+            </section>
 
-        <section class="py-3">
-            {{#with experience}}
-            {{> title data=title big=false}}
-            <div>
-                <p>
-                    {{text}}
-                </p>
-            </div>
-            {{/with}}
-        </section>
-    </main>
-    {{/with}}
-</div>
+            <section class="py-3">
+                {{#with experience}}
+                {{> title data=title big=false}}
+                <div>
+                    <p>
+                        {{text}}
+                    </p>
+                </div>
+                {{/with}}
+            </section>
+        </main>
+        {{/with}}
+    </div>
+</main>
