@@ -1,6 +1,16 @@
-  <nav>
-    {{> lnk text="Skills" href="/skills" line=true}}
-    {{> lnk text="Summary" href="/summary" line=true}}
-    {{> lnk text="Education" href="/education" line=true}}
-    {{> lnk text="Work" href="/Work" line=true noLine=true}}
-  </nav>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link {{#if skills}}active{{/if}}" {{#if skills}}aria-current="page" {{/if}} href="/skills">Skills</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {{#if summary}}active{{/if}}" {{#if summary}}aria-current="page" {{/if}}
+      href="/summary">Summary</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {{#if education}}active{{/if}}" {{#if education}}aria-current="page" {{/if}}
+      href="/education">Education</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {{#if work}}active{{/if}}" {{#if work}}aria-current="page" {{/if}} href="/work">Work</a>
+  </li>
+</ul>

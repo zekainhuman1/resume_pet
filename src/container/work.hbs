@@ -1,3 +1,5 @@
+{{> nav work=1}}
+<hr>
 <div>
     {{#with main}}
     <main>
@@ -9,11 +11,11 @@
                     <li>
                         <div>{{position}}</div>
                         <div class="mb-2">
-                            {{duration.to}} - 
+                            {{duration.to}} -
                             {{#if duration.to}}
-                                {{duration.to}}
+                            {{duration.to}}
                             {{else}}
-                                (по данний час)
+                            (по данний час)
                             {{/if}}
                         </div>
                         <div class="mb-4">
